@@ -16,11 +16,175 @@ type Recipe = {
 const STORAGE_KEY = "restaurant-recipes";
 const PASSWORD = "chef2024";
 
+const DEFAULT_RECIPES: Recipe[] = [
+  {
+    id: "default-1",
+    name: "Borchtch (Борщ)",
+    ingredients: `500g de betteraves rouges, épluchées et râpées
+300g de chou blanc, émincé
+2 pommes de terre, coupées en dés
+1 carotte, râpée
+1 oignon, émincé
+2 gousses d'ail, hachées
+400g de bœuf (poitrine ou paleron)
+2 cuillères à soupe de concentré de tomate
+1 cuillère à soupe de vinaigre de vin rouge
+1 feuille de laurier
+Aneth frais
+Crème fraîche épaisse pour servir
+Sel, poivre`,
+    instructions: `1. Faire bouillir le bœuf dans 2L d'eau avec la feuille de laurier pendant 1h30. Écumer régulièrement.
+2. Retirer la viande, la couper en morceaux. Filtrer le bouillon.
+3. Dans une cocotte, faire revenir l'oignon et la carotte dans un peu d'huile pendant 5 min.
+4. Ajouter les betteraves râpées et le concentré de tomate. Cuire 10 min à feu doux.
+5. Verser le bouillon, ajouter les pommes de terre et le chou. Cuire 20 min.
+6. Remettre la viande, ajouter le vinaigre, l'ail. Assaisonner.
+7. Laisser reposer 30 min avant de servir (le borchtch est meilleur réchauffé).
+8. Servir avec une cuillère de crème fraîche et de l'aneth frais.`,
+    createdAt: "26/06/2026",
+  },
+  {
+    id: "default-2",
+    name: "Solianka (Солянка)",
+    ingredients: `300g de bœuf bouilli (reste du bouillon)
+150g de saucisses fumées, coupées en rondelles
+100g de jambon, en dés
+2 cornichons malossol, coupés en dés
+2 cuillères à soupe de câpres
+1 oignon, émincé
+2 cuillères à soupe de concentré de tomate
+100g d'olives noires
+1 citron, en rondelles
+1,5L de bouillon de bœuf
+Aneth et persil frais
+Crème fraîche pour servir
+Sel, poivre, feuille de laurier`,
+    instructions: `1. Dans une cocotte, faire revenir l'oignon dans du beurre jusqu'à coloration.
+2. Ajouter le concentré de tomate, cuire 3 min en remuant.
+3. Ajouter les cornichons et les câpres, cuire 5 min.
+4. Verser le bouillon de bœuf, porter à ébullition.
+5. Ajouter le bœuf coupé en morceaux, les saucisses et le jambon.
+6. Cuire 15 min à feu doux. Ajouter les olives.
+7. Assaisonner avec sel, poivre, feuille de laurier.
+8. Servir avec une rondelle de citron, de la crème fraîche et des herbes fraîches.`,
+    createdAt: "26/06/2026",
+  },
+  {
+    id: "default-3",
+    name: "Filet Mignon aux Pommes",
+    ingredients: `1 filet mignon de porc (environ 500g)
+3 pommes (type Golden ou Reinette)
+50g de beurre
+2 cuillères à soupe de miel
+10cl de crème fraîche
+10cl de cidre breton
+1 branche de thym
+Sel, poivre
+Huile d'olive`,
+    instructions: `1. Préchauffer le four à 180°C.
+2. Assaisonner le filet mignon de sel, poivre et thym.
+3. Dans une cocotte allant au four, saisir le filet mignon sur toutes les faces dans un peu d'huile d'olive.
+4. Enfourner pour 25 min.
+5. Pendant ce temps, éplucher et couper les pommes en quartiers.
+6. Dans une poêle, faire fondre le beurre, ajouter les pommes et le miel. Caraméliser 10 min.
+7. Déglacer avec le cidre, laisser réduire 5 min.
+8. Sortir le filet mignon, le laisser reposer 5 min sous aluminium.
+9. Déglacer la cocotte avec la crème fraîche.
+10. Trancher le filet mignon, servir avec les pommes caramélisées et la sauce.`,
+    createdAt: "26/06/2026",
+  },
+  {
+    id: "default-4",
+    name: "Tartare de Bœuf au Couteau",
+    ingredients: `400g de filet de bœuf ou rumsteck (très frais)
+2 échalotes, finement ciselées
+2 cuillères à soupe de câpres
+4 cornichons, finement coupés
+1 jaune d'œuf par personne
+Moutarde de Dijon
+Tabasco
+Sauce Worcestershire
+Huile d'olive
+Persil plat, ciselé
+Sel, poivre du moulin
+Ciboulette`,
+    instructions: `1. Couper la viande au couteau en petits dés réguliers (ne pas utiliser de hachoir).
+2. Réserver au frais dans un bol.
+3. Préparer l'assaisonnement : mélanger échalotes, câpres, cornichons, moutarde, un trait de Tabasco et de Worcestershire, huile d'olive.
+4. Au moment de servir, mélanger délicatement la viande avec l'assaisonnement.
+5. Dresser à l'aide d'un cercle sur chaque assiette.
+6. Déposer un jaune d'œuf sur le dessus.
+7. Parsemer de ciboulette et persil.
+8. Servir immédiatement avec des frites maison et une salade verte.`,
+    createdAt: "26/06/2026",
+  },
+  {
+    id: "default-5",
+    name: "Côte de Bœuf (pour 2 personnes)",
+    ingredients: `1 côte de bœuf de 800g à 1kg (sortie du frigo 1h avant)
+Gros sel, poivre du moulin
+30g de beurre
+2 branches de thym
+2 gousses d'ail en chemise
+Fleur de sel pour servir
+Accompagnement : pommes de terre grenaille rôties, salade verte`,
+    instructions: `1. Sortir la côte de bœuf du réfrigérateur 1h avant la cuisson.
+2. Préchauffer le four à 200°C.
+3. Assaisonner généreusement la viande de gros sel et poivre.
+4. Dans une poêle en fonte très chaude, saisir la côte de bœuf 3 min de chaque côté jusqu'à obtenir une belle croûte dorée.
+5. Transférer dans un plat allant au four. Ajouter le beurre, le thym et l'ail.
+6. Enfourner 15 min pour une cuisson saignante, 20 min pour à point.
+7. Arroser régulièrement avec le jus de cuisson.
+8. Sortir du four, couvrir d'aluminium et laisser reposer 10 min.
+9. Trancher, parsemer de fleur de sel.
+10. Servir avec des pommes grenaille rôties et une salade.`,
+    createdAt: "26/06/2026",
+  },
+  {
+    id: "default-6",
+    name: "Tartines Garnies (Base)",
+    ingredients: `Pain de campagne au levain, tranché épais
+Beurre demi-sel (Bretagne !)
+
+GARNITURE FROMAGE :
+Comté affiné 18 mois, roquette, noix, miel
+
+GARNITURE CHARCUTERIE :
+Jambon cru, coppa, cornichons, moutarde à l'ancienne
+
+GARNITURE ŒUF :
+Œuf au plat ou poché, lardons, ciboulette
+
+GARNITURE SALADE :
+Chèvre frais, mesclun, tomates cerises, vinaigrette au miel`,
+    instructions: `1. Trancher le pain de campagne en tranches épaisses (2 cm).
+2. Griller légèrement au four ou au grille-pain.
+3. Tartiner de beurre demi-sel breton.
+4. Garnir selon la variante choisie :
+
+FROMAGE : Disposer les tranches de Comté, la roquette, les noix concassées. Filet de miel.
+
+CHARCUTERIE : Étaler la moutarde, disposer jambon cru et coppa. Accompagner de cornichons.
+
+ŒUF : Cuire les lardons, poser sur le pain. Ajouter un œuf au plat par-dessus. Ciboulette.
+
+SALADE : Tartiner le chèvre frais, ajouter le mesclun et les tomates. Arroser de vinaigrette au miel.
+
+5. Servir avec une salade verte assaisonnée.`,
+    createdAt: "26/06/2026",
+  },
+];
+
 function loadRecipes(): Recipe[] {
   if (typeof window === "undefined") return [];
   try {
     const data = localStorage.getItem(STORAGE_KEY);
-    return data ? JSON.parse(data) : [];
+    if (data) {
+      return JSON.parse(data);
+    }
+    // First visit: seed with default recipes
+    saveRecipes(DEFAULT_RECIPES);
+    return DEFAULT_RECIPES;
   } catch {
     return [];
   }

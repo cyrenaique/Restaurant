@@ -20,9 +20,9 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link
               href="/recipes"
-              className="text-wine-500 hover:text-wine-300 transition-colors text-xs"
+              className="text-wine-500 hover:text-wine-300 transition-colors text-sm flex items-center gap-1"
             >
-              🔒
+              🔒 {locale === "fr" ? "Espace privé" : "Private area"}
             </Link>
             <span>
               &copy; {new Date().getFullYear()} Restaurant. {t("footer.rights", locale)}
