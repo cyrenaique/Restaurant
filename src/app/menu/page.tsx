@@ -11,6 +11,7 @@ type MenuItem = {
   descFr: string;
   descEn: string;
   image: string;
+  price: string;
 };
 
 const soups: MenuItem[] = [
@@ -20,6 +21,7 @@ const soups: MenuItem[] = [
     descFr: "Soupe traditionnelle russe à la betterave, servie avec de la crème fraîche",
     descEn: "Traditional Russian beetroot soup, served with sour cream",
     image: "/images/menu/Borscht_served.jpg",
+    price: "9 €",
   },
   {
     nameFr: "Solianka (Солянка)",
@@ -27,6 +29,7 @@ const soups: MenuItem[] = [
     descFr: "Soupe russe épaisse et épicée aux viandes, cornichons et olives",
     descEn: "Thick and spicy Russian soup with meats, pickles, and olives",
     image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=400&fit=crop",
+    price: "10 €",
   },
   {
     nameFr: "Shakshuka (Шакшука)",
@@ -34,6 +37,7 @@ const soups: MenuItem[] = [
     descFr: "Œufs pochés dans une sauce tomate épicée aux poivrons et oignons",
     descEn: "Eggs poached in a spiced tomato, pepper, and onion sauce",
     image: "/images/menu/Shakshuka_by_Calliopejen1.jpg",
+    price: "11 €",
   },
   {
     nameFr: "Hareng en Manteau (Сельдь под шубой)",
@@ -41,6 +45,7 @@ const soups: MenuItem[] = [
     descFr: "Salade russe en couches : hareng, betteraves, carottes, pommes de terre et mayonnaise",
     descEn: "Traditional Russian layered salad with herring, beetroot, carrots, potatoes, and mayonnaise",
     image: "/images/menu/Selidi_pod_shuboi.jpg",
+    price: "10 €",
   },
 ];
 
@@ -51,6 +56,7 @@ const mains: MenuItem[] = [
     descFr: "Filet mignon de porc ou de bœuf, accompagné de pommes caramélisées",
     descEn: "Pork or beef filet mignon, accompanied by caramelized apples",
     image: "https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=400&fit=crop",
+    price: "22 €",
   },
   {
     nameFr: "Tartare de Bœuf au Couteau",
@@ -58,6 +64,7 @@ const mains: MenuItem[] = [
     descFr: "Bœuf frais coupé au couteau, assaisonné selon la tradition française",
     descEn: "Fresh beef hand-cut and seasoned in the French tradition",
     image: "/images/menu/Tartare_de_boeuf_charolais_01.jpg",
+    price: "19 €",
   },
   {
     nameFr: "Côte de Bœuf",
@@ -65,6 +72,7 @@ const mains: MenuItem[] = [
     descFr: "Côte de bœuf grillée, servie pour deux personnes avec ses accompagnements",
     descEn: "Grilled rib steak, served for two with side dishes",
     image: "/images/menu/cote-de-boeuf-black-angus-cuite-1.webp",
+    price: "38 €",
   },
 ];
 
@@ -72,13 +80,14 @@ type TartineItem = {
   nameFr: string;
   nameEn: string;
   image: string;
+  price: string;
 };
 
 const tartines: TartineItem[] = [
-  { nameFr: "Tartine Fromage", nameEn: "Cheese Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg" },
-  { nameFr: "Tartine Charcuterie", nameEn: "Charcuterie Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg" },
-  { nameFr: "Tartine Œuf", nameEn: "Egg Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg" },
-  { nameFr: "Tartine Salade", nameEn: "Salad Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg" },
+  { nameFr: "Tartine Fromage", nameEn: "Cheese Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg", price: "12 €" },
+  { nameFr: "Tartine Charcuterie", nameEn: "Charcuterie Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg", price: "13 €" },
+  { nameFr: "Tartine Œuf", nameEn: "Egg Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg", price: "11 €" },
+  { nameFr: "Tartine Salade", nameEn: "Salad Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg", price: "11 €" },
 ];
 
 export default function MenuPage() {
@@ -115,10 +124,13 @@ export default function MenuPage() {
                     sizes="(max-width: 640px) 100vw, 192px"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="font-display text-lg font-bold text-gray-900">
-                    {locale === "fr" ? item.nameFr : item.nameEn}
-                  </h3>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-display text-lg font-bold text-gray-900">
+                      {locale === "fr" ? item.nameFr : item.nameEn}
+                    </h3>
+                    <span className="font-display text-lg font-bold text-wine-700 whitespace-nowrap">{item.price}</span>
+                  </div>
                   <p className="text-gray-500 text-sm mt-1">
                     {locale === "fr" ? item.descFr : item.descEn}
                   </p>
@@ -155,10 +167,13 @@ export default function MenuPage() {
                     sizes="(max-width: 640px) 100vw, 192px"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="font-display text-lg font-bold text-gray-900">
-                    {locale === "fr" ? item.nameFr : item.nameEn}
-                  </h3>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-display text-lg font-bold text-gray-900">
+                      {locale === "fr" ? item.nameFr : item.nameEn}
+                    </h3>
+                    <span className="font-display text-lg font-bold text-wine-700 whitespace-nowrap">{item.price}</span>
+                  </div>
                   <p className="text-gray-500 text-sm mt-1">
                     {locale === "fr" ? item.descFr : item.descEn}
                   </p>
@@ -199,9 +214,12 @@ export default function MenuPage() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-display text-base font-bold text-gray-900">
-                    {locale === "fr" ? item.nameFr : item.nameEn}
-                  </h3>
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-display text-base font-bold text-gray-900">
+                      {locale === "fr" ? item.nameFr : item.nameEn}
+                    </h3>
+                    <span className="font-display text-base font-bold text-wine-700 whitespace-nowrap">{item.price}</span>
+                  </div>
                   <p className="text-xs text-gray-400 mt-1 italic">
                     {locale === "fr" ? item.nameEn : item.nameFr}
                   </p>
