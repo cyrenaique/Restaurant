@@ -25,7 +25,7 @@ const soups: MenuItem[] = [
     nameEn: "Solyanka",
     descFr: "Soupe russe épaisse et épicée aux viandes, cornichons et olives",
     descEn: "Thick and spicy Russian soup with meats, pickles, and olives",
-    image: "/images/menu/Borscht_served.jpg",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=400&fit=crop",
   },
 ];
 
