@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
@@ -68,6 +69,7 @@ const tartines: TartineItem[] = [
 
 export default function MenuPage() {
   const { locale } = useLanguage();
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
   return (
     <div className="py-16 bg-sand-50 min-h-screen">
@@ -87,12 +89,15 @@ export default function MenuPage() {
           <div className="space-y-6">
             {soups.map((item, i) => (
               <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
-                <div className="relative w-full sm:w-48 h-40 sm:h-auto flex-shrink-0">
+                <div
+                  className="relative w-full sm:w-48 h-40 sm:h-auto flex-shrink-0 cursor-pointer"
+                  onClick={() => setLightbox({ src: item.image, alt: locale === "fr" ? item.nameFr : item.nameEn })}
+                >
                   <Image
                     src={item.image}
                     alt={locale === "fr" ? item.nameFr : item.nameEn}
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 640px) 100vw, 192px"
                   />
                 </div>
@@ -124,12 +129,15 @@ export default function MenuPage() {
           <div className="space-y-6">
             {mains.map((item, i) => (
               <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
-                <div className="relative w-full sm:w-48 h-40 sm:h-auto flex-shrink-0">
+                <div
+                  className="relative w-full sm:w-48 h-40 sm:h-auto flex-shrink-0 cursor-pointer"
+                  onClick={() => setLightbox({ src: item.image, alt: locale === "fr" ? item.nameFr : item.nameEn })}
+                >
                   <Image
                     src={item.image}
                     alt={locale === "fr" ? item.nameFr : item.nameEn}
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 640px) 100vw, 192px"
                   />
                 </div>
@@ -164,12 +172,15 @@ export default function MenuPage() {
           <div className="grid sm:grid-cols-2 gap-4">
             {tartines.map((item, i) => (
               <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative w-full h-36">
+                <div
+                  className="relative w-full h-36 cursor-pointer overflow-hidden"
+                  onClick={() => setLightbox({ src: item.image, alt: locale === "fr" ? item.nameFr : item.nameEn })}
+                >
                   <Image
                     src={item.image}
                     alt={locale === "fr" ? item.nameFr : item.nameEn}
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 640px) 100vw, 50vw"
                   />
                 </div>
@@ -185,6 +196,32 @@ export default function MenuPage() {
             ))}
           </div>
         </div>
+
+        {/* Lightbox Modal */}
+        {lightbox && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-pointer"
+            onClick={() => setLightbox(null)}
+            onKeyDown={(e) => e.key === "Escape" && setLightbox(null)}
+            tabIndex={0}
+          >
+            <div className="relative max-w-[90vw] max-h-[90vh]">
+              <Image
+                src={lightbox.src}
+                alt={lightbox.alt}
+                width={1200}
+                height={800}
+                className="object-contain max-w-[90vw] max-h-[90vh] rounded-lg"
+              />
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute top-2 right-2 text-white bg-black/50 rounded-full w-10 h-10 flex items-center justify-center text-2xl hover:bg-black/70 transition"
+              >
+                &times;
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Note */}
         <div className="text-center text-sm text-gray-400 italic mt-12">
