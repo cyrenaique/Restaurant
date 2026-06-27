@@ -234,7 +234,15 @@ function loadRecipes(): Recipe[] {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
     if (data) {
-      return JSON.parse(data);
+      const saved: Recipe[] = JSON.parse(data);
+      const savedIds = new Set(saved.map((r) => r.id));
+      const missing = DEFAULT_RECIPES.filter((r) => !savedIds.has(r.id));
+      if (missing.length > 0) {
+        const merged = [...saved, ...missing];
+        saveRecipes(merged);
+        return merged;
+      }
+      return saved;
     }
     // First visit: seed with default recipes
     saveRecipes(DEFAULT_RECIPES);
