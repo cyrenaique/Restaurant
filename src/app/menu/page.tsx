@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 
@@ -8,6 +9,7 @@ type MenuItem = {
   nameEn: string;
   descFr: string;
   descEn: string;
+  image: string;
 };
 
 const soups: MenuItem[] = [
@@ -16,12 +18,14 @@ const soups: MenuItem[] = [
     nameEn: "Borscht",
     descFr: "Soupe traditionnelle russe à la betterave, servie avec de la crème fraîche",
     descEn: "Traditional Russian beetroot soup, served with sour cream",
+    image: "/images/menu/Borscht_served.jpg",
   },
   {
     nameFr: "Solianka",
     nameEn: "Solyanka",
     descFr: "Soupe russe épaisse et épicée aux viandes, cornichons et olives",
     descEn: "Thick and spicy Russian soup with meats, pickles, and olives",
+    image: "/images/menu/Borscht_served.jpg",
   },
 ];
 
@@ -31,31 +35,35 @@ const mains: MenuItem[] = [
     nameEn: "Filet Mignon with Apples",
     descFr: "Filet mignon de porc ou de bœuf, accompagné de pommes caramélisées",
     descEn: "Pork or beef filet mignon, accompanied by caramelized apples",
+    image: "https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=400&fit=crop",
   },
   {
     nameFr: "Tartare de Bœuf au Couteau",
     nameEn: "Hand-Cut Beef Tartare",
     descFr: "Bœuf frais coupé au couteau, assaisonné selon la tradition française",
     descEn: "Fresh beef hand-cut and seasoned in the French tradition",
+    image: "/images/menu/Tartare_de_boeuf_charolais_01.jpg",
   },
   {
     nameFr: "Côte de Bœuf",
     nameEn: "Rib Steak",
     descFr: "Côte de bœuf grillée, servie pour deux personnes avec ses accompagnements",
     descEn: "Grilled rib steak, served for two with side dishes",
+    image: "/images/menu/cote-de-boeuf-black-angus-cuite-1.webp",
   },
 ];
 
 type TartineItem = {
   nameFr: string;
   nameEn: string;
+  image: string;
 };
 
 const tartines: TartineItem[] = [
-  { nameFr: "Tartine Fromage", nameEn: "Cheese Tartine" },
-  { nameFr: "Tartine Charcuterie", nameEn: "Charcuterie Tartine" },
-  { nameFr: "Tartine Œuf", nameEn: "Egg Tartine" },
-  { nameFr: "Tartine Salade", nameEn: "Salad Tartine" },
+  { nameFr: "Tartine Fromage", nameEn: "Cheese Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg" },
+  { nameFr: "Tartine Charcuterie", nameEn: "Charcuterie Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg" },
+  { nameFr: "Tartine Œuf", nameEn: "Egg Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg" },
+  { nameFr: "Tartine Salade", nameEn: "Salad Tartine", image: "/images/menu/SFS_Pepper-Crusted_Tuna_Preserved_Lemon_Egg_Tartines_05_v2pjtm.jpg" },
 ];
 
 export default function MenuPage() {
@@ -78,19 +86,30 @@ export default function MenuPage() {
           </h2>
           <div className="space-y-6">
             {soups.map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-display text-lg font-bold text-gray-900">
-                  {locale === "fr" ? item.nameFr : item.nameEn}
-                </h3>
-                <p className="text-gray-500 text-sm mt-1">
-                  {locale === "fr" ? item.descFr : item.descEn}
-                </p>
-                {locale === "fr" && (
-                  <p className="text-xs text-gray-400 mt-1 italic">{item.nameEn}</p>
-                )}
-                {locale === "en" && (
-                  <p className="text-xs text-gray-400 mt-1 italic">{item.nameFr}</p>
-                )}
+              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
+                <div className="relative w-full sm:w-48 h-40 sm:h-auto flex-shrink-0">
+                  <Image
+                    src={item.image}
+                    alt={locale === "fr" ? item.nameFr : item.nameEn}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 192px"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-lg font-bold text-gray-900">
+                    {locale === "fr" ? item.nameFr : item.nameEn}
+                  </h3>
+                  <p className="text-gray-500 text-sm mt-1">
+                    {locale === "fr" ? item.descFr : item.descEn}
+                  </p>
+                  {locale === "fr" && (
+                    <p className="text-xs text-gray-400 mt-1 italic">{item.nameEn}</p>
+                  )}
+                  {locale === "en" && (
+                    <p className="text-xs text-gray-400 mt-1 italic">{item.nameFr}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -104,19 +123,30 @@ export default function MenuPage() {
           </h2>
           <div className="space-y-6">
             {mains.map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-display text-lg font-bold text-gray-900">
-                  {locale === "fr" ? item.nameFr : item.nameEn}
-                </h3>
-                <p className="text-gray-500 text-sm mt-1">
-                  {locale === "fr" ? item.descFr : item.descEn}
-                </p>
-                {locale === "fr" && (
-                  <p className="text-xs text-gray-400 mt-1 italic">{item.nameEn}</p>
-                )}
-                {locale === "en" && (
-                  <p className="text-xs text-gray-400 mt-1 italic">{item.nameFr}</p>
-                )}
+              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
+                <div className="relative w-full sm:w-48 h-40 sm:h-auto flex-shrink-0">
+                  <Image
+                    src={item.image}
+                    alt={locale === "fr" ? item.nameFr : item.nameEn}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 192px"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-lg font-bold text-gray-900">
+                    {locale === "fr" ? item.nameFr : item.nameEn}
+                  </h3>
+                  <p className="text-gray-500 text-sm mt-1">
+                    {locale === "fr" ? item.descFr : item.descEn}
+                  </p>
+                  {locale === "fr" && (
+                    <p className="text-xs text-gray-400 mt-1 italic">{item.nameEn}</p>
+                  )}
+                  {locale === "en" && (
+                    <p className="text-xs text-gray-400 mt-1 italic">{item.nameFr}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -133,13 +163,24 @@ export default function MenuPage() {
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {tartines.map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-display text-base font-bold text-gray-900">
-                  {locale === "fr" ? item.nameFr : item.nameEn}
-                </h3>
-                <p className="text-xs text-gray-400 mt-1 italic">
-                  {locale === "fr" ? item.nameEn : item.nameFr}
-                </p>
+              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div className="relative w-full h-36">
+                  <Image
+                    src={item.image}
+                    alt={locale === "fr" ? item.nameFr : item.nameEn}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-base font-bold text-gray-900">
+                    {locale === "fr" ? item.nameFr : item.nameEn}
+                  </h3>
+                  <p className="text-xs text-gray-400 mt-1 italic">
+                    {locale === "fr" ? item.nameEn : item.nameFr}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
