@@ -15,14 +15,14 @@ type MenuItem = {
 
 const soups: MenuItem[] = [
   {
-    nameFr: "Borchtch",
+    nameFr: "Borchtch (Борщ)",
     nameEn: "Borscht",
     descFr: "Soupe traditionnelle russe à la betterave, servie avec de la crème fraîche",
     descEn: "Traditional Russian beetroot soup, served with sour cream",
     image: "/images/menu/Borscht_served.jpg",
   },
   {
-    nameFr: "Solianka",
+    nameFr: "Solianka (Солянка)",
     nameEn: "Solyanka",
     descFr: "Soupe russe épaisse et épicée aux viandes, cornichons et olives",
     descEn: "Thick and spicy Russian soup with meats, pickles, and olives",
@@ -36,7 +36,7 @@ const soups: MenuItem[] = [
     image: "/images/menu/Shakshuka_by_Calliopejen1.jpg",
   },
   {
-    nameFr: "Sельдь под шубой (Hareng en Manteau)",
+    nameFr: "Hareng en Manteau (Сельдь под шубой)",
     nameEn: "Herring Under a Fur Coat",
     descFr: "Salade russe en couches : hareng, betteraves, carottes, pommes de terre et mayonnaise",
     descEn: "Traditional Russian layered salad with herring, beetroot, carrots, potatoes, and mayonnaise",
