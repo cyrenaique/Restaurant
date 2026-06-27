@@ -35,6 +35,13 @@ const soups: MenuItem[] = [
     descEn: "Eggs poached in a spiced tomato, pepper, and onion sauce",
     image: "/images/menu/Shakshuka_by_Calliopejen1.jpg",
   },
+  {
+    nameFr: "Sельдь под шубой (Hareng en Manteau)",
+    nameEn: "Herring Under a Fur Coat",
+    descFr: "Salade russe en couches : hareng, betteraves, carottes, pommes de terre et mayonnaise",
+    descEn: "Traditional Russian layered salad with herring, beetroot, carrots, potatoes, and mayonnaise",
+    image: "/images/menu/Selidi_pod_shuboi.jpg",
+  },
 ];
 
 const mains: MenuItem[] = [
