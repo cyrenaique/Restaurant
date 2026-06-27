@@ -28,6 +28,13 @@ const soups: MenuItem[] = [
     descEn: "Thick and spicy Russian soup with meats, pickles, and olives",
     image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=400&fit=crop",
   },
+  {
+    nameFr: "Shakshuka (Шакшука)",
+    nameEn: "Shakshuka",
+    descFr: "Œufs pochés dans une sauce tomate épicée aux poivrons et oignons",
+    descEn: "Eggs poached in a spiced tomato, pepper, and onion sauce",
+    image: "/images/menu/Shakshuka_by_Calliopejen1.jpg",
+  },
 ];
 
 const mains: MenuItem[] = [

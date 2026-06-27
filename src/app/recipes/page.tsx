@@ -70,6 +70,33 @@ Sel, poivre, feuille de laurier`,
     createdAt: "26/06/2026",
   },
   {
+    id: "default-7",
+    name: "Shakshuka (Шакшука)",
+    ingredients: `4 œufs
+400g de tomates concassées (ou 6 tomates fraîches)
+2 poivrons rouges, coupés en dés
+1 oignon, émincé
+3 gousses d'ail, hachées
+1 cuillère à café de cumin moulu
+1 cuillère à café de paprika fumé
+1/2 cuillère à café de piment d'Espelette
+1 cuillère à soupe de concentré de tomate
+Persil ou coriandre frais
+Huile d'olive
+Sel, poivre
+Pain croustillant pour servir`,
+    instructions: `1. Dans une grande poêle (avec couvercle), faire chauffer l'huile d'olive à feu moyen.
+2. Faire revenir l'oignon et les poivrons pendant 8 min jusqu'à ce qu'ils soient tendres.
+3. Ajouter l'ail, le cumin, le paprika et le piment. Cuire 1 min en remuant.
+4. Ajouter les tomates concassées et le concentré de tomate. Saler, poivrer.
+5. Laisser mijoter 10-15 min jusqu'à ce que la sauce épaississe.
+6. Creuser 4 puits dans la sauce avec le dos d'une cuillère.
+7. Casser un œuf dans chaque puits. Saler légèrement les œufs.
+8. Couvrir et cuire 5-8 min à feu doux jusqu'à ce que les blancs soient pris mais les jaunes encore coulants.
+9. Parsemer d'herbes fraîches. Servir directement dans la poêle avec du pain croustillant.`,
+    createdAt: "27/06/2026",
+  },
+  {
     id: "default-3",
     name: "Filet Mignon aux Pommes",
     ingredients: `1 filet mignon de porc (environ 500g)
