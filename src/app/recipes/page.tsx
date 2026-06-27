@@ -70,6 +70,33 @@ Sel, poivre, feuille de laurier`,
     createdAt: "26/06/2026",
   },
   {
+    id: "default-8",
+    name: "Сельдь под шубой (Hareng en Manteau)",
+    ingredients: `400g de filets de hareng salé (ou hareng fumé)
+3 betteraves rouges, cuites
+3 pommes de terre, cuites
+2 carottes, cuites
+2 œufs durs
+1 oignon moyen, finement émincé
+200g de mayonnaise
+Sel, poivre
+Aneth frais pour décorer`,
+    instructions: `1. Dessaler les filets de hareng dans du lait froid pendant 2h (si hareng salé). Couper en petits morceaux.
+2. Cuire les betteraves, pommes de terre, carottes et œufs. Laisser refroidir, puis râper séparément.
+3. Monter la salade en couches dans un plat ou un cercle :
+   - 1ère couche : hareng coupé en morceaux
+   - 2ème couche : oignon émincé
+   - 3ème couche : pommes de terre râpées + mayonnaise
+   - 4ème couche : carottes râpées + mayonnaise
+   - 5ème couche : œufs râpés + mayonnaise
+   - 6ème couche : betteraves râpées + mayonnaise
+4. Lisser la surface avec une couche finale de mayonnaise.
+5. Réfrigérer au minimum 4h (idéalement toute la nuit) pour que les saveurs se mélangent.
+6. Décorer avec de l'aneth frais et des jaunes d'œuf émiettés.
+7. Servir bien froid.`,
+    createdAt: "27/06/2026",
+  },
+  {
     id: "default-7",
     name: "Shakshuka (Шакшука)",
     ingredients: `4 œufs
