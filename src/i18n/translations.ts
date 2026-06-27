@@ -84,6 +84,34 @@ export const translations = {
       en: "Delete this recipe?",
     },
   },
+  providers: {
+    title: { fr: "Fournisseurs", en: "Suppliers" },
+    subtitle: {
+      fr: "Espace privé — fournisseurs locaux",
+      en: "Private area — local suppliers",
+    },
+    passwordLabel: { fr: "Mot de passe", en: "Password" },
+    enter: { fr: "Entrer", en: "Enter" },
+    wrongPassword: {
+      fr: "Mot de passe incorrect",
+      en: "Incorrect password",
+    },
+    addProvider: { fr: "Ajouter un fournisseur", en: "Add a supplier" },
+    providerName: { fr: "Nom du fournisseur", en: "Supplier name" },
+    category: { fr: "Catégorie", en: "Category" },
+    contact: { fr: "Contact", en: "Contact" },
+    notes: { fr: "Notes", en: "Notes" },
+    save: { fr: "Enregistrer", en: "Save" },
+    cancel: { fr: "Annuler", en: "Cancel" },
+    noProviders: {
+      fr: "Aucun fournisseur pour l'instant. Ajoutez votre premier fournisseur !",
+      en: "No suppliers yet. Add your first supplier!",
+    },
+    deleteConfirm: {
+      fr: "Supprimer ce fournisseur ?",
+      en: "Delete this supplier?",
+    },
+  },
   footer: {
     rights: {
       fr: "Tous droits réservés.",
