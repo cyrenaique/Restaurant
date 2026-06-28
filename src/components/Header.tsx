@@ -9,6 +9,7 @@ import { t } from "@/i18n/translations";
 const navLinks = [
   { href: "/", labelKey: "nav.home" },
   { href: "/menu", labelKey: "nav.menu" },
+  { href: "/providers", labelKey: "nav.providers" },
   { href: "/about", labelKey: "nav.about" },
   { href: "/contact", labelKey: "nav.contact" },
 ];

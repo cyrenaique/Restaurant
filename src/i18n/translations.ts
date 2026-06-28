@@ -7,6 +7,7 @@ export const translations = {
     about: { fr: "À Propos", en: "About" },
     contact: { fr: "Contact", en: "Contact" },
     recipes: { fr: "Recettes", en: "Recipes" },
+    providers: { fr: "Nos Producteurs", en: "Our Producers" },
   },
   hero: {
     subtitle: {
