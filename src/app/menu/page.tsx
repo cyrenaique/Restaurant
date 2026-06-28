@@ -44,7 +44,7 @@ const soups: MenuItem[] = [
     nameEn: "Cold Borscht",
     descFr: "Soupe froide d'été à la betterave, concombre, œuf dur et kéfir — rafraîchissante et légère",
     descEn: "Refreshing cold summer beet soup with cucumber, boiled egg, and kefir",
-    image: "https://images.unsplash.com/photo-1527976746453-f363eac4db84?w=600&h=400&fit=crop",
+    image: "/images/menu/svekolnik_klassicheskii_s_myasom-317480.jpg",
     price: "9 €",
   },
   {
