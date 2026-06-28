@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Plus, Trash2, ChefHat, Lock } from "lucide-react";
+import { Plus, Trash2, ChefHat, Lock, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 
@@ -267,6 +267,7 @@ export default function RecipesPage() {
   const [newIngredients, setNewIngredients] = useState("");
   const [newInstructions, setNewInstructions] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [showMargins, setShowMargins] = useState(false);
 
   useEffect(() => {
     if (authenticated) {
@@ -351,6 +352,21 @@ export default function RecipesPage() {
     );
   }
 
+  // Margins data
+  const margins = [
+    { name: "Borchtch (Борщ)", price: 9, cost: 2.8, category: "Entrée" },
+    { name: "Solianka (Солянка)", price: 10, cost: 3.5, category: "Entrée" },
+    { name: "Shakshuka (Шакшука)", price: 11, cost: 2.5, category: "Entrée" },
+    { name: "Hareng en Manteau (Сельдь под шубой)", price: 10, cost: 3.2, category: "Entrée" },
+    { name: "Filet Mignon aux Pommes", price: 22, cost: 8.5, category: "Plat" },
+    { name: "Tartare de Bœuf au Couteau", price: 19, cost: 7.0, category: "Plat" },
+    { name: "Côte de Bœuf (2 pers.)", price: 38, cost: 15.0, category: "Plat" },
+    { name: "Tartine Fromage", price: 12, cost: 3.5, category: "Tartine" },
+    { name: "Tartine Charcuterie", price: 13, cost: 4.2, category: "Tartine" },
+    { name: "Tartine Œuf", price: 11, cost: 2.8, category: "Tartine" },
+    { name: "Tartine Salade", price: 11, cost: 2.5, category: "Tartine" },
+  ];
+
   // Recipes dashboard
   return (
     <div className="py-16 bg-sand-50 min-h-screen">
@@ -368,6 +384,87 @@ export default function RecipesPage() {
             <Plus className="w-5 h-5" />
             {t("recipes.addRecipe", locale)}
           </button>
+        </div>
+
+        {/* Margins Section */}
+        <div className="bg-white rounded-2xl shadow-sm mb-8 overflow-hidden">
+          <button
+            onClick={() => setShowMargins(!showMargins)}
+            className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <TrendingUp className="w-5 h-5 text-wine-600" />
+              <h2 className="font-display text-lg font-bold text-gray-900">
+                Marges estimées par plat
+              </h2>
+            </div>
+            <span className="text-gray-400 text-xl">{showMargins ? "−" : "+"}</span>
+          </button>
+          {showMargins && (
+            <div className="px-6 pb-6 border-t border-gray-100">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm mt-4">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-2 pr-4 font-semibold text-gray-700">Plat</th>
+                      <th className="text-right py-2 px-2 font-semibold text-gray-700">Prix</th>
+                      <th className="text-right py-2 px-2 font-semibold text-gray-700">Coût mat.</th>
+                      <th className="text-right py-2 px-2 font-semibold text-gray-700">Marge €</th>
+                      <th className="text-right py-2 pl-2 font-semibold text-gray-700">Marge %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {margins.map((item, i) => {
+                      const margin = item.price - item.cost;
+                      const pct = ((margin / item.price) * 100).toFixed(0);
+                      return (
+                        <tr key={i} className="border-b border-gray-50 hover:bg-gray-50">
+                          <td className="py-2.5 pr-4">
+                            <span className="font-medium text-gray-900">{item.name}</span>
+                            <span className="ml-2 text-xs text-gray-400">{item.category}</span>
+                          </td>
+                          <td className="text-right py-2.5 px-2 text-gray-700">{item.price} €</td>
+                          <td className="text-right py-2.5 px-2 text-gray-500">{item.cost.toFixed(1)} €</td>
+                          <td className="text-right py-2.5 px-2 font-semibold text-green-700">{margin.toFixed(1)} €</td>
+                          <td className="text-right py-2.5 pl-2">
+                            <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold ${
+                              Number(pct) >= 70 ? "bg-green-100 text-green-800" :
+                              Number(pct) >= 60 ? "bg-lime-100 text-lime-800" :
+                              "bg-yellow-100 text-yellow-800"
+                            }`}>
+                              {pct}%
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                  <tfoot>
+                    <tr className="border-t-2 border-gray-200">
+                      <td className="py-3 pr-4 font-bold text-gray-900">Moyenne</td>
+                      <td className="text-right py-3 px-2 font-bold text-gray-700">
+                        {(margins.reduce((s, m) => s + m.price, 0) / margins.length).toFixed(1)} €
+                      </td>
+                      <td className="text-right py-3 px-2 font-bold text-gray-500">
+                        {(margins.reduce((s, m) => s + m.cost, 0) / margins.length).toFixed(1)} €
+                      </td>
+                      <td className="text-right py-3 px-2 font-bold text-green-700">
+                        {(margins.reduce((s, m) => s + (m.price - m.cost), 0) / margins.length).toFixed(1)} €
+                      </td>
+                      <td className="text-right py-3 pl-2">
+                        <span className="inline-block px-2 py-0.5 rounded text-xs font-bold bg-green-100 text-green-800">
+                          {(margins.reduce((s, m) => s + ((m.price - m.cost) / m.price) * 100, 0) / margins.length).toFixed(0)}%
+                        </span>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <p className="text-xs text-gray-400 mt-4 italic">
+                * Coûts matières premières estimés (hors charges fixes, personnel, loyer). Objectif marge matière : 65-75%.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Add Form */}
