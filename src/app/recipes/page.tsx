@@ -227,6 +227,75 @@ SALADE : Tartiner le chèvre frais, ajouter le mesclun et les tomates. Arroser d
 5. Servir avec une salade verte assaisonnée.`,
     createdAt: "26/06/2026",
   },
+  {
+    id: "default-7",
+    name: "Borchtch Froid (Свекольник)",
+    ingredients: `3 betteraves moyennes, cuites et râpées
+1 concombre, coupé en petits dés
+3 œufs durs, hachés
+1 botte de radis, émincés
+1 botte d'aneth frais, ciselé
+1 botte de ciboulette, ciselée
+500 ml de kéfir (ou yaourt liquide)
+500 ml d'eau froide ou bouillon de betterave refroidi
+Jus de citron (1-2 c. à soupe)
+Sel, poivre
+Crème fraîche pour servir`,
+    instructions: `1. Cuire les betteraves à l'eau (1h) ou au four (papillote, 1h30). Laisser refroidir complètement.
+2. Râper les betteraves. Conserver le bouillon de cuisson et le laisser refroidir.
+3. Couper le concombre en petits dés, émincer les radis.
+4. Hacher les œufs durs grossièrement.
+5. Dans un grand saladier, mélanger le kéfir avec l'eau froide (ou le bouillon de betterave refroidi).
+6. Ajouter les betteraves râpées, le concombre, les radis, les œufs.
+7. Assaisonner avec le jus de citron, sel et poivre.
+8. Ajouter l'aneth et la ciboulette, mélanger.
+9. Réfrigérer au moins 2h (idéalement une nuit).
+10. Servir bien froid avec une cuillerée de crème fraîche et un œuf dur coupé en deux.
+
+Note : Peut se préparer la veille. Plus c'est froid, meilleur c'est !`,
+    createdAt: "28/06/2026",
+  },
+  {
+    id: "default-8",
+    name: "Chachlik (Шашлык)",
+    ingredients: `1 kg d'épaule d'agneau ou de porc (coupée en cubes de 4 cm)
+3 oignons, émincés en rondelles
+4 gousses d'ail, écrasées
+100 ml d'huile d'olive
+50 ml de vinaigre de vin rouge
+1 c. à café de paprika fumé
+1 c. à café de coriandre moulue
+1 c. à café de cumin
+Sel, poivre noir
+Sumac (pour servir)
+
+SAUCE TKEMALI :
+200 g de prunes acides (ou mirabelles vertes)
+2 gousses d'ail
+1 bouquet de coriandre fraîche
+1 piment rouge
+Sel, sucre`,
+    instructions: `MARINADE (la veille) :
+1. Couper la viande en cubes réguliers de 4 cm.
+2. Mélanger l'huile, le vinaigre, l'ail, le paprika, la coriandre, le cumin, sel et poivre.
+3. Ajouter les oignons émincés et la viande. Bien mélanger.
+4. Couvrir et mariner au réfrigérateur 12-24h minimum.
+
+SAUCE TKEMALI :
+1. Cuire les prunes dans un peu d'eau (15 min).
+2. Mixer avec l'ail, la coriandre, le piment, sel et une pincée de sucre.
+3. Réserver au frais.
+
+CUISSON :
+1. Sortir la viande 1h avant la cuisson (température ambiante).
+2. Enfiler sur des brochettes métalliques, en alternant viande et oignon.
+3. Griller au barbecue (ou four grill 250°C) 12-15 min, en tournant régulièrement.
+4. La viande doit être légèrement rosée à l'intérieur.
+5. Servir avec la sauce tkemali, des oignons frais, du sumac et du pain lavash.
+
+Accompagnement : Salade de tomates-concombres à l'huile d'olive et herbes fraîches.`,
+    createdAt: "28/06/2026",
+  },
 ];
 
 function loadRecipes(): Recipe[] {
@@ -357,10 +426,12 @@ export default function RecipesPage() {
     { name: "Borchtch (Борщ)", price: 9, cost: 2.8, category: "Entrée" },
     { name: "Solianka (Солянка)", price: 10, cost: 3.5, category: "Entrée" },
     { name: "Shakshuka (Шакшука)", price: 11, cost: 2.5, category: "Entrée" },
+    { name: "Borchtch Froid (Свекольник)", price: 9, cost: 2.2, category: "Entrée" },
     { name: "Hareng en Manteau (Сельдь под шубой)", price: 10, cost: 3.2, category: "Entrée" },
     { name: "Filet Mignon aux Pommes", price: 22, cost: 8.5, category: "Plat" },
     { name: "Tartare de Bœuf au Couteau", price: 19, cost: 7.0, category: "Plat" },
     { name: "Côte de Bœuf (2 pers.)", price: 38, cost: 15.0, category: "Plat" },
+    { name: "Chachlik (Шашлык)", price: 18, cost: 6.5, category: "Plat" },
     { name: "Tartine Fromage", price: 12, cost: 3.5, category: "Tartine" },
     { name: "Tartine Charcuterie", price: 13, cost: 4.2, category: "Tartine" },
     { name: "Tartine Œuf", price: 11, cost: 2.8, category: "Tartine" },

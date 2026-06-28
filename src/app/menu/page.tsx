@@ -40,6 +40,14 @@ const soups: MenuItem[] = [
     price: "11 €",
   },
   {
+    nameFr: "Borchtch Froid (Свекольник)",
+    nameEn: "Cold Borscht",
+    descFr: "Soupe froide d'été à la betterave, concombre, œuf dur et kéfir — rafraîchissante et légère",
+    descEn: "Refreshing cold summer beet soup with cucumber, boiled egg, and kefir",
+    image: "https://images.unsplash.com/photo-1527976746453-f363eac4db84?w=600&h=400&fit=crop",
+    price: "9 €",
+  },
+  {
     nameFr: "Hareng en Manteau (Сельдь под шубой)",
     nameEn: "Herring Under a Fur Coat",
     descFr: "Salade russe en couches : hareng, betteraves, carottes, pommes de terre et mayonnaise",
@@ -73,6 +81,14 @@ const mains: MenuItem[] = [
     descEn: "Grilled rib steak, served for two with side dishes",
     image: "/images/menu/cote-de-boeuf-black-angus-cuite-1.webp",
     price: "38 €",
+  },
+  {
+    nameFr: "Chachlik (Шашлык)",
+    nameEn: "Shashlik",
+    descFr: "Brochettes de viande marinée grillées au feu de bois, servies avec sauce tkemali et oignons",
+    descEn: "Wood-fire grilled marinated meat skewers, served with tkemali sauce and onions",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop",
+    price: "18 €",
   },
 ];
 
