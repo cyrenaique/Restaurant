@@ -82,6 +82,14 @@ const DEFAULT_PROVIDERS: Provider[] = [
     notes: "Cidre breton pour le filet mignon aux pommes. Aussi jus de pomme artisanal.",
     createdAt: "27/06/2026",
   },
+  {
+    id: "prov-9",
+    name: "Ferme du Pré Bois",
+    category: "Porc, Charcuterie & Viande à la découpe",
+    contact: "Le Pré Bois – 35400 Saint-Malo\nTél: 02 99 81 79 80\ncontact@lafermeduprebois.bzh\nhttps://lafermeduprebois.bzh",
+    notes: "Élevage et boucherie-charcuterie à Saint-Malo. Jambon à l'os, saucisse fumée, pâtés, rôtis, côtes, caissettes. Idéal pour la solianka et les plats de porc. Possibilité de commande professionnelle.",
+    createdAt: "28/06/2026",
+  },
 ];
 
 function loadProviders(): Provider[] {
