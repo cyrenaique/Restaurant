@@ -365,6 +365,20 @@ export default function RecipesPage() {
     { name: "Tartine Charcuterie", price: 13, cost: 4.2, category: "Tartine" },
     { name: "Tartine Œuf", price: 11, cost: 2.8, category: "Tartine" },
     { name: "Tartine Salade", price: 11, cost: 2.5, category: "Tartine" },
+    { name: "Muscadet (verre)", price: 5, cost: 1.2, category: "Vin" },
+    { name: "Sancerre Blanc (verre)", price: 7, cost: 2.0, category: "Vin" },
+    { name: "Chinon Rouge (verre)", price: 6, cost: 1.5, category: "Vin" },
+    { name: "Bourgueil Rouge (verre)", price: 6, cost: 1.4, category: "Vin" },
+    { name: "Vouvray Demi-Sec (verre)", price: 6, cost: 1.5, category: "Vin" },
+    { name: "Rosé d'Anjou (verre)", price: 5, cost: 1.1, category: "Vin" },
+    { name: "Cidre Breton (bouteille)", price: 12, cost: 3.5, category: "Cidre" },
+    { name: "Bière Artisanale", price: 5, cost: 1.8, category: "Bière" },
+    { name: "Thé Russe au Samovar", price: 4, cost: 0.6, category: "Boisson chaude" },
+    { name: "Thé Ivan-Tchaï", price: 4, cost: 0.8, category: "Boisson chaude" },
+    { name: "Café", price: 2.5, cost: 0.4, category: "Boisson chaude" },
+    { name: "Jus de Pomme Artisanal", price: 3.5, cost: 1.0, category: "Sans alcool" },
+    { name: "Mors aux Airelles", price: 4, cost: 0.8, category: "Sans alcool" },
+    { name: "Limonade Maison", price: 4, cost: 0.7, category: "Sans alcool" },
   ];
 
   // Recipes dashboard

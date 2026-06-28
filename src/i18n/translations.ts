@@ -8,6 +8,7 @@ export const translations = {
     contact: { fr: "Contact", en: "Contact" },
     recipes: { fr: "Recettes", en: "Recipes" },
     providers: { fr: "Nos Producteurs", en: "Our Producers" },
+    drinks: { fr: "Boissons", en: "Drinks" },
   },
   hero: {
     subtitle: {
@@ -84,6 +85,17 @@ export const translations = {
       fr: "Supprimer cette recette ?",
       en: "Delete this recipe?",
     },
+  },
+  drinks: {
+    title: { fr: "Nos Boissons", en: "Our Drinks" },
+    subtitle: {
+      fr: "Vins locaux, cidres bretons et thés russes",
+      en: "Local wines, Breton ciders, and Russian teas",
+    },
+    wines: { fr: "Vins", en: "Wines" },
+    ciders: { fr: "Cidres & Bières", en: "Ciders & Beers" },
+    hot: { fr: "Boissons Chaudes", en: "Hot Drinks" },
+    soft: { fr: "Sans Alcool", en: "Non-Alcoholic" },
   },
   providers: {
     title: { fr: "Fournisseurs", en: "Suppliers" },
