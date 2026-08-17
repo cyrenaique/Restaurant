@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Plus, Trash2, ChefHat, Lock } from "lucide-react";
+import { Plus, Trash2, ChefHat, Lock, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 
@@ -68,6 +68,60 @@ Sel, poivre, feuille de laurier`,
 7. Assaisonner avec sel, poivre, feuille de laurier.
 8. Servir avec une rondelle de citron, de la crème fraîche et des herbes fraîches.`,
     createdAt: "26/06/2026",
+  },
+  {
+    id: "default-8",
+    name: "Сельдь под шубой (Hareng en Manteau)",
+    ingredients: `400g de filets de hareng salé (ou hareng fumé)
+3 betteraves rouges, cuites
+3 pommes de terre, cuites
+2 carottes, cuites
+2 œufs durs
+1 oignon moyen, finement émincé
+200g de mayonnaise
+Sel, poivre
+Aneth frais pour décorer`,
+    instructions: `1. Dessaler les filets de hareng dans du lait froid pendant 2h (si hareng salé). Couper en petits morceaux.
+2. Cuire les betteraves, pommes de terre, carottes et œufs. Laisser refroidir, puis râper séparément.
+3. Monter la salade en couches dans un plat ou un cercle :
+   - 1ère couche : hareng coupé en morceaux
+   - 2ème couche : oignon émincé
+   - 3ème couche : pommes de terre râpées + mayonnaise
+   - 4ème couche : carottes râpées + mayonnaise
+   - 5ème couche : œufs râpés + mayonnaise
+   - 6ème couche : betteraves râpées + mayonnaise
+4. Lisser la surface avec une couche finale de mayonnaise.
+5. Réfrigérer au minimum 4h (idéalement toute la nuit) pour que les saveurs se mélangent.
+6. Décorer avec de l'aneth frais et des jaunes d'œuf émiettés.
+7. Servir bien froid.`,
+    createdAt: "27/06/2026",
+  },
+  {
+    id: "default-7",
+    name: "Shakshuka (Шакшука)",
+    ingredients: `4 œufs
+400g de tomates concassées (ou 6 tomates fraîches)
+2 poivrons rouges, coupés en dés
+1 oignon, émincé
+3 gousses d'ail, hachées
+1 cuillère à café de cumin moulu
+1 cuillère à café de paprika fumé
+1/2 cuillère à café de piment d'Espelette
+1 cuillère à soupe de concentré de tomate
+Persil ou coriandre frais
+Huile d'olive
+Sel, poivre
+Pain croustillant pour servir`,
+    instructions: `1. Dans une grande poêle (avec couvercle), faire chauffer l'huile d'olive à feu moyen.
+2. Faire revenir l'oignon et les poivrons pendant 8 min jusqu'à ce qu'ils soient tendres.
+3. Ajouter l'ail, le cumin, le paprika et le piment. Cuire 1 min en remuant.
+4. Ajouter les tomates concassées et le concentré de tomate. Saler, poivrer.
+5. Laisser mijoter 10-15 min jusqu'à ce que la sauce épaississe.
+6. Creuser 4 puits dans la sauce avec le dos d'une cuillère.
+7. Casser un œuf dans chaque puits. Saler légèrement les œufs.
+8. Couvrir et cuire 5-8 min à feu doux jusqu'à ce que les blancs soient pris mais les jaunes encore coulants.
+9. Parsemer d'herbes fraîches. Servir directement dans la poêle avec du pain croustillant.`,
+    createdAt: "27/06/2026",
   },
   {
     id: "default-3",
@@ -173,6 +227,75 @@ SALADE : Tartiner le chèvre frais, ajouter le mesclun et les tomates. Arroser d
 5. Servir avec une salade verte assaisonnée.`,
     createdAt: "26/06/2026",
   },
+  {
+    id: "default-7",
+    name: "Borchtch Froid (Свекольник)",
+    ingredients: `3 betteraves moyennes, cuites et râpées
+1 concombre, coupé en petits dés
+3 œufs durs, hachés
+1 botte de radis, émincés
+1 botte d'aneth frais, ciselé
+1 botte de ciboulette, ciselée
+500 ml de kéfir (ou yaourt liquide)
+500 ml d'eau froide ou bouillon de betterave refroidi
+Jus de citron (1-2 c. à soupe)
+Sel, poivre
+Crème fraîche pour servir`,
+    instructions: `1. Cuire les betteraves à l'eau (1h) ou au four (papillote, 1h30). Laisser refroidir complètement.
+2. Râper les betteraves. Conserver le bouillon de cuisson et le laisser refroidir.
+3. Couper le concombre en petits dés, émincer les radis.
+4. Hacher les œufs durs grossièrement.
+5. Dans un grand saladier, mélanger le kéfir avec l'eau froide (ou le bouillon de betterave refroidi).
+6. Ajouter les betteraves râpées, le concombre, les radis, les œufs.
+7. Assaisonner avec le jus de citron, sel et poivre.
+8. Ajouter l'aneth et la ciboulette, mélanger.
+9. Réfrigérer au moins 2h (idéalement une nuit).
+10. Servir bien froid avec une cuillerée de crème fraîche et un œuf dur coupé en deux.
+
+Note : Peut se préparer la veille. Plus c'est froid, meilleur c'est !`,
+    createdAt: "28/06/2026",
+  },
+  {
+    id: "default-8",
+    name: "Chachlik (Шашлык)",
+    ingredients: `1 kg d'épaule d'agneau ou de porc (coupée en cubes de 4 cm)
+3 oignons, émincés en rondelles
+4 gousses d'ail, écrasées
+100 ml d'huile d'olive
+50 ml de vinaigre de vin rouge
+1 c. à café de paprika fumé
+1 c. à café de coriandre moulue
+1 c. à café de cumin
+Sel, poivre noir
+Sumac (pour servir)
+
+SAUCE TKEMALI :
+200 g de prunes acides (ou mirabelles vertes)
+2 gousses d'ail
+1 bouquet de coriandre fraîche
+1 piment rouge
+Sel, sucre`,
+    instructions: `MARINADE (la veille) :
+1. Couper la viande en cubes réguliers de 4 cm.
+2. Mélanger l'huile, le vinaigre, l'ail, le paprika, la coriandre, le cumin, sel et poivre.
+3. Ajouter les oignons émincés et la viande. Bien mélanger.
+4. Couvrir et mariner au réfrigérateur 12-24h minimum.
+
+SAUCE TKEMALI :
+1. Cuire les prunes dans un peu d'eau (15 min).
+2. Mixer avec l'ail, la coriandre, le piment, sel et une pincée de sucre.
+3. Réserver au frais.
+
+CUISSON :
+1. Sortir la viande 1h avant la cuisson (température ambiante).
+2. Enfiler sur des brochettes métalliques, en alternant viande et oignon.
+3. Griller au barbecue (ou four grill 250°C) 12-15 min, en tournant régulièrement.
+4. La viande doit être légèrement rosée à l'intérieur.
+5. Servir avec la sauce tkemali, des oignons frais, du sumac et du pain lavash.
+
+Accompagnement : Salade de tomates-concombres à l'huile d'olive et herbes fraîches.`,
+    createdAt: "28/06/2026",
+  },
 ];
 
 function loadRecipes(): Recipe[] {
@@ -180,7 +303,15 @@ function loadRecipes(): Recipe[] {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
     if (data) {
-      return JSON.parse(data);
+      const saved: Recipe[] = JSON.parse(data);
+      const savedIds = new Set(saved.map((r) => r.id));
+      const missing = DEFAULT_RECIPES.filter((r) => !savedIds.has(r.id));
+      if (missing.length > 0) {
+        const merged = [...saved, ...missing];
+        saveRecipes(merged);
+        return merged;
+      }
+      return saved;
     }
     // First visit: seed with default recipes
     saveRecipes(DEFAULT_RECIPES);
@@ -205,6 +336,7 @@ export default function RecipesPage() {
   const [newIngredients, setNewIngredients] = useState("");
   const [newInstructions, setNewInstructions] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [showMargins, setShowMargins] = useState(false);
 
   useEffect(() => {
     if (authenticated) {
@@ -289,6 +421,37 @@ export default function RecipesPage() {
     );
   }
 
+  // Margins data
+  const margins = [
+    { name: "Borchtch (Борщ)", price: 9, cost: 2.8, category: "Entrée" },
+    { name: "Solianka (Солянка)", price: 10, cost: 3.5, category: "Entrée" },
+    { name: "Shakshuka (Шакшука)", price: 11, cost: 2.5, category: "Entrée" },
+    { name: "Borchtch Froid (Свекольник)", price: 9, cost: 2.2, category: "Entrée" },
+    { name: "Hareng en Manteau (Сельдь под шубой)", price: 10, cost: 3.2, category: "Entrée" },
+    { name: "Filet Mignon aux Pommes", price: 22, cost: 8.5, category: "Plat" },
+    { name: "Tartare de Bœuf au Couteau", price: 19, cost: 7.0, category: "Plat" },
+    { name: "Côte de Bœuf (2 pers.)", price: 38, cost: 15.0, category: "Plat" },
+    { name: "Chachlik (Шашлык)", price: 18, cost: 6.5, category: "Plat" },
+    { name: "Tartine Fromage", price: 12, cost: 3.5, category: "Tartine" },
+    { name: "Tartine Charcuterie", price: 13, cost: 4.2, category: "Tartine" },
+    { name: "Tartine Œuf", price: 11, cost: 2.8, category: "Tartine" },
+    { name: "Tartine Salade", price: 11, cost: 2.5, category: "Tartine" },
+    { name: "Muscadet (verre)", price: 5, cost: 1.2, category: "Vin" },
+    { name: "Sancerre Blanc (verre)", price: 7, cost: 2.0, category: "Vin" },
+    { name: "Chinon Rouge (verre)", price: 6, cost: 1.5, category: "Vin" },
+    { name: "Bourgueil Rouge (verre)", price: 6, cost: 1.4, category: "Vin" },
+    { name: "Vouvray Demi-Sec (verre)", price: 6, cost: 1.5, category: "Vin" },
+    { name: "Rosé d'Anjou (verre)", price: 5, cost: 1.1, category: "Vin" },
+    { name: "Cidre Breton (bouteille)", price: 12, cost: 3.5, category: "Cidre" },
+    { name: "Bière Artisanale", price: 5, cost: 1.8, category: "Bière" },
+    { name: "Thé Russe au Samovar", price: 4, cost: 0.6, category: "Boisson chaude" },
+    { name: "Thé Ivan-Tchaï", price: 4, cost: 0.8, category: "Boisson chaude" },
+    { name: "Café", price: 2.5, cost: 0.4, category: "Boisson chaude" },
+    { name: "Jus de Pomme Artisanal", price: 3.5, cost: 1.0, category: "Sans alcool" },
+    { name: "Mors aux Airelles", price: 4, cost: 0.8, category: "Sans alcool" },
+    { name: "Limonade Maison", price: 4, cost: 0.7, category: "Sans alcool" },
+  ];
+
   // Recipes dashboard
   return (
     <div className="py-16 bg-sand-50 min-h-screen">
@@ -306,6 +469,87 @@ export default function RecipesPage() {
             <Plus className="w-5 h-5" />
             {t("recipes.addRecipe", locale)}
           </button>
+        </div>
+
+        {/* Margins Section */}
+        <div className="bg-white rounded-2xl shadow-sm mb-8 overflow-hidden">
+          <button
+            onClick={() => setShowMargins(!showMargins)}
+            className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <TrendingUp className="w-5 h-5 text-wine-600" />
+              <h2 className="font-display text-lg font-bold text-gray-900">
+                Marges estimées par plat
+              </h2>
+            </div>
+            <span className="text-gray-400 text-xl">{showMargins ? "−" : "+"}</span>
+          </button>
+          {showMargins && (
+            <div className="px-6 pb-6 border-t border-gray-100">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm mt-4">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-2 pr-4 font-semibold text-gray-700">Plat</th>
+                      <th className="text-right py-2 px-2 font-semibold text-gray-700">Prix</th>
+                      <th className="text-right py-2 px-2 font-semibold text-gray-700">Coût mat.</th>
+                      <th className="text-right py-2 px-2 font-semibold text-gray-700">Marge €</th>
+                      <th className="text-right py-2 pl-2 font-semibold text-gray-700">Marge %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {margins.map((item, i) => {
+                      const margin = item.price - item.cost;
+                      const pct = ((margin / item.price) * 100).toFixed(0);
+                      return (
+                        <tr key={i} className="border-b border-gray-50 hover:bg-gray-50">
+                          <td className="py-2.5 pr-4">
+                            <span className="font-medium text-gray-900">{item.name}</span>
+                            <span className="ml-2 text-xs text-gray-400">{item.category}</span>
+                          </td>
+                          <td className="text-right py-2.5 px-2 text-gray-700">{item.price} €</td>
+                          <td className="text-right py-2.5 px-2 text-gray-500">{item.cost.toFixed(1)} €</td>
+                          <td className="text-right py-2.5 px-2 font-semibold text-green-700">{margin.toFixed(1)} €</td>
+                          <td className="text-right py-2.5 pl-2">
+                            <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold ${
+                              Number(pct) >= 70 ? "bg-green-100 text-green-800" :
+                              Number(pct) >= 60 ? "bg-lime-100 text-lime-800" :
+                              "bg-yellow-100 text-yellow-800"
+                            }`}>
+                              {pct}%
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                  <tfoot>
+                    <tr className="border-t-2 border-gray-200">
+                      <td className="py-3 pr-4 font-bold text-gray-900">Moyenne</td>
+                      <td className="text-right py-3 px-2 font-bold text-gray-700">
+                        {(margins.reduce((s, m) => s + m.price, 0) / margins.length).toFixed(1)} €
+                      </td>
+                      <td className="text-right py-3 px-2 font-bold text-gray-500">
+                        {(margins.reduce((s, m) => s + m.cost, 0) / margins.length).toFixed(1)} €
+                      </td>
+                      <td className="text-right py-3 px-2 font-bold text-green-700">
+                        {(margins.reduce((s, m) => s + (m.price - m.cost), 0) / margins.length).toFixed(1)} €
+                      </td>
+                      <td className="text-right py-3 pl-2">
+                        <span className="inline-block px-2 py-0.5 rounded text-xs font-bold bg-green-100 text-green-800">
+                          {(margins.reduce((s, m) => s + ((m.price - m.cost) / m.price) * 100, 0) / margins.length).toFixed(0)}%
+                        </span>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <p className="text-xs text-gray-400 mt-4 italic">
+                * Coûts matières premières estimés (hors charges fixes, personnel, loyer). Objectif marge matière : 65-75%.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Add Form */}

@@ -7,6 +7,8 @@ export const translations = {
     about: { fr: "À Propos", en: "About" },
     contact: { fr: "Contact", en: "Contact" },
     recipes: { fr: "Recettes", en: "Recipes" },
+    providers: { fr: "Nos Producteurs", en: "Our Producers" },
+    drinks: { fr: "Boissons", en: "Drinks" },
   },
   hero: {
     subtitle: {
@@ -82,6 +84,45 @@ export const translations = {
     deleteConfirm: {
       fr: "Supprimer cette recette ?",
       en: "Delete this recipe?",
+    },
+  },
+  drinks: {
+    title: { fr: "Nos Boissons", en: "Our Drinks" },
+    subtitle: {
+      fr: "Vins locaux, cidres bretons et thés russes",
+      en: "Local wines, Breton ciders, and Russian teas",
+    },
+    wines: { fr: "Vins", en: "Wines" },
+    ciders: { fr: "Cidres & Bières", en: "Ciders & Beers" },
+    hot: { fr: "Boissons Chaudes", en: "Hot Drinks" },
+    soft: { fr: "Sans Alcool", en: "Non-Alcoholic" },
+  },
+  providers: {
+    title: { fr: "Fournisseurs", en: "Suppliers" },
+    subtitle: {
+      fr: "Espace privé — fournisseurs locaux",
+      en: "Private area — local suppliers",
+    },
+    passwordLabel: { fr: "Mot de passe", en: "Password" },
+    enter: { fr: "Entrer", en: "Enter" },
+    wrongPassword: {
+      fr: "Mot de passe incorrect",
+      en: "Incorrect password",
+    },
+    addProvider: { fr: "Ajouter un fournisseur", en: "Add a supplier" },
+    providerName: { fr: "Nom du fournisseur", en: "Supplier name" },
+    category: { fr: "Catégorie", en: "Category" },
+    contact: { fr: "Contact", en: "Contact" },
+    notes: { fr: "Notes", en: "Notes" },
+    save: { fr: "Enregistrer", en: "Save" },
+    cancel: { fr: "Annuler", en: "Cancel" },
+    noProviders: {
+      fr: "Aucun fournisseur pour l'instant. Ajoutez votre premier fournisseur !",
+      en: "No suppliers yet. Add your first supplier!",
+    },
+    deleteConfirm: {
+      fr: "Supprimer ce fournisseur ?",
+      en: "Delete this supplier?",
     },
   },
   footer: {
